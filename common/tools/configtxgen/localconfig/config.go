@@ -322,11 +322,9 @@ func (p *Profile) completeInitialization(configDir string) {
 		}
 	}
 
-	if p.Consortiums != nil {
-		for _, consortium := range p.Consortiums {
-			for _, org := range consortium.Organizations {
-				org.completeInitialization(configDir)
-			}
+	for _, consortium := range p.Consortiums {
+		for _, org := range consortium.Organizations {
+			org.completeInitialization(configDir)
 		}
 	}
 
