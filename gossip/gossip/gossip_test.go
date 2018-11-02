@@ -1608,7 +1608,7 @@ func waitUntilOrFailBlocking(t *testing.T, f func()) {
 
 func searchInStackTrace(searchTerm string, stack []string) bool {
 	for _, ste := range stack {
-		if strings.Index(ste, searchTerm) != -1 {
+		if strings.Contains(ste, searchTerm) {
 			return true
 		}
 	}
